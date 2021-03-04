@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MYVAR="The answer to everything is:"
-ANS='42'
+myvar="The answer to everything is:"
+answer='42'
 
-echo "${MYVAR} ${ANS}"
+echo "${myvar} ${answer}"
