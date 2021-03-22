@@ -1,7 +1,6 @@
 #!/bin/bash
 echo "Number of parameters: $#"
 
-
 # Look at the parameters!
 echo "\$0 = $0"  # The script name
 echo "\$1 = $1"  # First parameter!
