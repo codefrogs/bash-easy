@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Bash-easy by Codefrogs"
 
 #Most characters aren't special!
 echo "Pound: £"  # Not an issue
@@ -14,4 +15,3 @@ echo "Ampersand: \&"
 # No need for backslash.@
 #Alternatively we can do:
 echo 'With single quotes: Dollar: $, Quote " Ampersand: &'
-

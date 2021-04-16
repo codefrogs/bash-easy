@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Bash-easy by Codefrogs"
 
 echo "A function call test script, which displays the user."
 user=$(whoami)  # we make a variable

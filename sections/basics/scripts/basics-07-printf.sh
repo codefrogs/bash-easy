@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "Bash-easy by Codefrogs"
+
 #printing some names
 printf "%s " "Brian" "Jason" "Xavier"
 printf "\n"

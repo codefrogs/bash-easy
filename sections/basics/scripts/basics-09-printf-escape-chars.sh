@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "Bash-easy by Codefrogs"
+
 #The special characters
 printf "%s " "Brian" "Jason" "Xavier"
 printf "\n"

@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "Bash-easy by Codefrogs"
+
 echo "Number of parameters: $#"
 
 # Look at the parameters!

@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Bash-easy by Codefrogs"
 
 #Child script: Using the parent variables
 

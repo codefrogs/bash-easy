@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Bash-easy by Codefrogs"
 
 #Lets look at printf
 
