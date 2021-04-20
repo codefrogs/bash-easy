@@ -26,5 +26,6 @@ echo
 # Echo with multiple lines
 echo
 val=$(ps -a)  # This has at least two lines of text
+echo -n "1: "
 echo $val     # But they end up together here!
-echo "$(ps -a)"  # Much better
+echo "2: $val"  # Much better
