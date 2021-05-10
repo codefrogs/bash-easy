@@ -15,10 +15,49 @@ function do_something(){
 
 #Alternative without 'function'
 do_stuff(){
-  echo "do_stuff: no explicit function keyword here!"
+  echo "do_stuff: whatever you like."
+}
+
+function display_this {
+  echo "This is: $1"
+}
+
+# Returning a string
+function get_date ()
+{
+  r=$(date)
+  echo "$r"
+}
+
+# Returning an integer
+function get_prime ()
+{
+  echo "101"
+}
+
+# Returning a exit code 0-255
+function get_status ()
+{
+  return 86
 }
 
 # Now we can use the functions.
 # And calling a function is easy
 do_something
 do_stuff
+
+# Use a parameter
+display_this "a parameter here"
+
+# Get a string value
+datenow=$( get_date )
+echo "Date now: $datenow"
+
+# Get integer using same method
+p=$(get_prime)
+echo "Prime: $p"
+
+# Using return
+get_status
+state=$?
+echo "Status: $state"
