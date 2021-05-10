@@ -1,0 +1,30 @@
+DNA: Deoxyribo Nucleic Acid
+
+It was in 1953 that the structure of DNA was found by James Watson and Francis Crick.
+
+
+Although DNA itself was first isolated in 1869 by the Swiss biochemist Johann Miescher.
+
+
+It was only after the X-ray analysis by Rosalind Franklin and Maurice Wilkins that Watson and Crick could piece together the structure of DNA.
+
+
+It took nearly 20 years later after the discovery of its structure in the 1970s for scientists to work out how to do DNA sequencing.
+
+
+It was then in 1983 that biochemist Kary Mullis invented the polymerase chain reaction (PCR) technique.
+
+
+This meant that it was then possible to make billions of a target DNA sequence copies in just a few hours.
+
+
+In 2012 Emmanuelle Charpentier and Jennifer Doudna discovered a molecular tool called Clustered Regularly Interspaced Short Palindromic Repeats (CRISPR).
+
+
+This tool enabled scientists to edit DNA, i.e. remove and insert new DNA sequence.
+
+
+This was considered to be the 'holy grail' of genetics.
+
+
+The two researchers received a Nobel Prize in chemistry in 2020 for their work.
