@@ -27,7 +27,25 @@ result=$(echo -e $twolines | tr -s '\n' )
 echo -e "$result"
 echo
 
-# Remove blank lines
+# Remove vertical & horizonal space, using a character class.
+echo "--------------------"
+twolines="3: This    is    Line 1 \n\n\n\n\n\n\n\n3: This    is    Line 2"
+result=$(echo -e $twolines | tr -s '[:space:]' )
+#echo -e $twolines | tr -s '\n'
+echo -e "$result"
+echo
+
+# Remove multiple new lines.
+# Notice that a dot and a newline does not constitute a repeated character.
+# So there are three new lines and three dots between 'Section 1 & 2'.
+echo "--------------------"
+twolines="4: Section 1\n.\n.\n.\n\n\n\n\n4: Section 2"
+result=$(echo -e $twolines | tr -s '[:space:]' )
+#echo -e $twolines | tr -s '\n'
+echo -e "$result"
+echo
+
+# Remove multiple new lines return
 echo "--------------------"
 text=$(cat sample.txt)
 result=$(echo -e "$text" | tr -s '\n' )
