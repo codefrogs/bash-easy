@@ -32,6 +32,14 @@ echo "--------------------"
 text=$(cat sample.txt)
 result=$(echo -e "$text" | tr -d '[:alpha:][:punct:]' )
 result=$(echo -e "$result" | tr -s '[:space:]' )
-echo -e "$result"
+echo -e "3: $result"
 echo "--------------------"
 echo
+
+# Get index from text.
+echo "--------------------"
+text="filename-008.txt"
+echo $text
+result=$(echo -e "$text" | tr -d '[:alpha:][:punct:]' )
+echo -e "4: Index=$result"
+echo "--------------------"
