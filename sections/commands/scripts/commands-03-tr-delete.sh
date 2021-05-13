@@ -29,7 +29,7 @@ echo
 # Remove letters and punctuation and whitespace.
 # Then remove extra spaces
 echo "--------------------"
-text=$(cat sample.txt)
+text=$(cat data/sample.txt)
 result=$(echo -e "$text" | tr -d '[:alpha:][:punct:]' )
 result=$(echo -e "$result" | tr -s '[:space:]' )
 echo -e "3: $result"
