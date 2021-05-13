@@ -1,0 +1,12 @@
+UFO sightings
+
+Datetime, city, state, country, shape, duration, comment
+10.10.1955 17:00, edna, tx, us, circle, 0.5, Was 30 ft above me, hovered, and disappeared in a blink of an eye
+03.03.1973 1930, willow beach, az, us, other, 0.1, Several flashing lights. Was saucer shaped.
+05.03.1974 2130, cardif ,   , uk, disk, 0.2, Car battery went flat. Overhead there was a glowing green light.
+23.08.1979 1900, saddle lake, ab, cn, unknown, Several search lights shinning through clouds.
+17.08.1979 2200, dallas, tx, us, unknown, Strange shaped shifting craft of pure light energy.
+12.011.1983 1730, spokane, wa, us, cigar, Silently moved across the sky without any sound.
+26.07.1988 2200, milwaukee, wi, us, triangle, Moved randomly, stopped, then moved again, and vanished.
+
+
