@@ -5,6 +5,20 @@ echo "Bash-easy by Codefrogs"
 # Using if with integers
 # No floats here!
 
+# We can use:
+# -gt (greater than)
+# -lt (less than)
+# -eq (equal)
+# -nq (not equal to)
+# -le (less or equal to)
+# -ge (greater or equal to)
+
+bob="83"
+victor="15"
+if [ $bob -gt $victor ]; then
+  echo "Bob is older than Victor!"
+fi
+
 amp1=55
 amp2=55
 if ((amp1==amp2)); then
