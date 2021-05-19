@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Bash-easy by Codefrogs"
 # Using 'print'
+# see: basics-06-printf
 
 #Test with escape characters
 some_text="I think\nTherefore I am.\nSocrates"
