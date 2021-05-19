@@ -2,8 +2,8 @@
 # Bash-easy by Codefrogs
 # Using the if statement
 echo "Bash-easy by Codefrogs"
-# Using if with integers
-# No floats here!
+# Using if with strings
+#
 
 name1="Napier"
 name2="Pascal"
