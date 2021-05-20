@@ -13,11 +13,14 @@ function do_something(){
   echo "do_something: simple function called."
 }
 
-#Alternative without 'function'
+# Alternative without 'function'
+# But needs to have the parenthesis '()'.
 do_stuff(){
   echo "do_stuff: whatever you like."
 }
 
+# A function using the keyword 'function' doesn't
+# need to have the parenthesis '()'.
 function display_this {
   echo "This is: $1"
 }
