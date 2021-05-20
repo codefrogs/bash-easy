@@ -3,7 +3,7 @@
 # Tests for the test/library.
 # All tests should pass.
 #
-source ../library.sh
+source ../testing-library.sh
 
 test_str eq "test_ints_same"     0 0
 test_str ne "test_ints_not_same" 0 1
