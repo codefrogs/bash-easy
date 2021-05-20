@@ -43,3 +43,21 @@ echo " 8: ++i =" $((++i))
 echo " 9: i   =" $i
 echo "10: i++ =" $((i++))
 echo "11: i   =" $i
+
+#Increment with +=
+file_count=1
+echo -e "\nUsing +="
+echo "12: file_count=  : $file_count"
+((file_count+=1))
+echo "13: file_count+=1: $file_count"
+((file_count+=1))
+echo "14: file_count+=1: $file_count"
+
+#decrement with -=
+file_count=1
+echo -e "\nUsing -="
+echo "15: file_count=  : $file_count"
+((file_count-=1))
+echo "16: file_count+=1: $file_count"
+((file_count-=1))
+echo "17: file_count+=1: $file_count"
