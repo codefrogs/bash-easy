@@ -16,36 +16,42 @@ echo "Bash-easy by Codefrogs"
 bob="83"
 victor="15"
 if [ $bob -gt $victor ]; then
-  echo "Bob is older than Victor!"
+  echo "1: Bob(83) is older than Victor(15)!"
 fi
 
 amp1=55
 amp2=55
 if ((amp1==amp2)); then
-  echo "Amplitude: $amp1 = $amp2"
+  echo "2: Amplitude same: $amp1 = $amp2"
+fi
+
+freq1=55
+freq2=54
+if (( freq1!=freq2 )); then
+  echo "3: Frequencies differ: $freq1 != $freq2"
 fi
 
 prime1="11"
 prime2="17"
 
 if ((prime1 < prime2)) ; then
-   echo "Prime: $prime1 < $prime2"
+   echo "4: Prime: $prime1 < $prime2"
 fi
 
 doping1="898"
 doping2="113"
 if ((doping1 > doping2)) ; then
-   echo "Doping: $doping1 > $doping2"
+   echo "5: Doping: $doping1 > $doping2"
 fi
 
 weight1=75
 weight2=70
 if ((weight1 >= weight2)) ; then
-  echo "Weight: $weight1 >= $weight2"
+  echo "6: Weight: $weight1 >= $weight2"
 fi
 
 temp1=120
 temp2=120
 if ((temp1 >= temp2)) ; then
-  echo "Temp: $temp1 >= $temp2"
+  echo "7: Temp: $temp1 >= $temp2"
 fi
