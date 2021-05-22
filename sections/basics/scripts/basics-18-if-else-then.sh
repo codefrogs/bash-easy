@@ -2,9 +2,12 @@
 echo "Bash-easy by Codefrogs"
 
 # if statements
-# We've already used the if statement previously in our 'test-integer/test-strings' scripts
-# But just for reference.
-# Note that the test [[ -n $var ]], is true if $var is defined, or just empty.
+#
+# In these examples we will focus on the structure of if statements.
+# rather than the test condition, i.e. [[ -n $var ]]
+# For the curious, test [[ -n $var ]], is true if $var is defined, or just empty.
+#
+# The test conditons will be explored in the 'test-integer/test-strings' scripts.
 #
 
 # Simple if-then
