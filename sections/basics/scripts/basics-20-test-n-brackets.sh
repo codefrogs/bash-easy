@@ -55,3 +55,5 @@ fi
 if [[ $filename =~ basics-[[:digit:]]{2}-(-|[[:alpha:]])+\.sh ]]; then
   echo "9: Regex        match with '[[]]': $filename"
 fi
+
+# Typically we will use single brackets in many of the subsequent scripts.
