@@ -1,4 +1,10 @@
 #!/bin/bash
+# Bash-easy by Codefrogs
+# Regular expressions are very useful, but can be confusing.
+# In our scripts we often use character classes such as [[:alpha:]] for example.
+# To play with regular expressions also know as regex, try out
+# this website: https://regex101.com
+#
 echo "String comparisons using regular expressions."
 echo
 
