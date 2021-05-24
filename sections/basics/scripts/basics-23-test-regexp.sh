@@ -25,7 +25,7 @@ fi
 # Using regular expression with anchor character '^'
 # Checking file prefix.
 val="data-colour.txt"
-# This requires the text to end with only a number.
+# This requires the text to start with 'data-'.
 if [[ $val =~ ^data- ]]; then
   echo "Found data file."
 else
