@@ -3,7 +3,7 @@ echo "Bash-easy by Codefrogs"
 
 # if statements
 #
-# In these examples we will focus on the structure of if statements.
+# In these examples we will focus on the structure of 'if' statements.
 # rather than the test condition, i.e. [[ -n $var ]]
 # For the curious, test [[ -n $var ]], is true if $var is defined, or just empty.
 #
