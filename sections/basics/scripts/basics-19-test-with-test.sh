@@ -6,7 +6,7 @@
 #
 
 # Test to see if this file exists.
-filename="basics-27-test-brackets-away.sh"
+filename="basics-27-test-with-test.sh"
 if test -e $filename; then
   echo "1: File exists: $filename"
 else
@@ -49,7 +49,7 @@ fi
 # Check string inequality.
 bark="meow meow"
 if test "$bark"!="Woof! Woof!"; then
-  echo "6: Dog is unwell."
+  echo "6: Our dog is unwell."
 else
   echo "6: Dog barked!"
 fi
