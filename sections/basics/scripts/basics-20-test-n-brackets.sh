@@ -1,14 +1,13 @@
 #!/bin/bash
 # Bash-easy by Codefrogs
 #
-# Lets explore testing. Below are the three forms:
+# Lets explore more testing. Below are the three forms:
 #
-#  - test [expression]  - test method.
+#  - test [expression]  - test method which we have already met.
 #  -      [expression]  - single bracket test (easier to understand)
 #  -     [[expression]] - double bracket test (with some extra features)
 # The expressions contain tests such as equality, inequality, or tests on files.
 #
-# See: `help test`
 #
 
 # Set up some variables to test with.
