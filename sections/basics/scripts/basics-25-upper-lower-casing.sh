@@ -1,5 +1,12 @@
 #!/bin/bash
 # Bash-easy by Codefrogs
+
+# We can convert a string to upper case using '^^'.
+# Likewise we can use ',,' to convert to lower case.
+# To help remember '^^', think of '^' as an arrow pointing UP for uppercase.
+# I tend to use the phrase 'Up Up and away!', (a 1967 song!) to help me
+# remember which is which. Notice the two UPs.
+
 echo "Bash-easy by Codefrogs"
 echo
 
