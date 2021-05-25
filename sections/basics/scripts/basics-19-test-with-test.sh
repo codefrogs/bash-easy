@@ -23,6 +23,7 @@ else
 fi
 
 # Now we test if a string is empty.
+# (To remember think of: Zero length)
 an_empty_string=""
 if test -z $an_empty_string; then
   echo "3: String is empty: $an_empty_string"
@@ -31,6 +32,7 @@ else
 fi
 
 # Now we test if a string is not empty.
+# (To remember think of: Not Nothing or Numerous Noodles)
 some_text="Hello!"
 if test -n $some_text; then
   echo "4: String is NOT empty: $some_text"
