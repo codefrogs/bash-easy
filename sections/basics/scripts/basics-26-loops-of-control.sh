@@ -1,9 +1,14 @@
 #!/bin/bash
+# Bash-easy by Codefrogs
+#
 # Control flow:
 #
 # - loops
 # - return
 # - exit
+echo "Bash-easy by Codefrogs"
+echo
+
 echo "Control flow"
 echo "------------"
 echo

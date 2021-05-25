@@ -1,5 +1,7 @@
 #!/bin/bash
+# Bash-easy by Codefrogs
 echo "Bash-easy by Codefrogs"
+echo
 
 #Integers
 val_int=5

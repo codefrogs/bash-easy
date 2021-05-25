@@ -1,4 +1,5 @@
 #!/bin/bash
+# Bash-easy by Codefrogs
 echo "Bash-easy by Codefrogs"
 # Using 'command substitution' to set a variable with output from a command.
 

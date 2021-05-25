@@ -1,4 +1,8 @@
 #!/bin/bash
+# Bash-easy by Codefrogs
+echo "Bash-easy by Codefrogs"
+echo
+
 echo "Expand variables into upper and lower case"
 echo "------------------------------------------"
 echo

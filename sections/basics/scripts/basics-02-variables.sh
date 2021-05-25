@@ -1,6 +1,6 @@
 #!/bin/bash
+# Bash-easy by Codefrogs
 echo "Bash-easy by Codefrogs"
-
 myvar="The answer to everything is:"
 answer='42'
 

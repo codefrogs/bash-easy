@@ -9,6 +9,7 @@
 # The expressions contain tests such as equality, inequality, or tests on files.
 #
 #
+echo "Bash-easy by Codefrogs"
 
 # Set up some variables to test with.
 hello="Hello World!"

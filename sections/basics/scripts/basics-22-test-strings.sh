@@ -1,9 +1,10 @@
 #!/bin/bash
 # Bash-easy by Codefrogs
-# Using the if statement
-echo "Bash-easy by Codefrogs"
+
 # Using if with strings
 #
+echo "Bash-easy by Codefrogs"
+echo
 
 name1="Napier"
 name2="Pascal"

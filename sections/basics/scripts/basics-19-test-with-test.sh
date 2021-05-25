@@ -1,9 +1,11 @@
 #!/bin/bash
+# Bash-easy by Codefrogs
 # Lets explore testing with 'test'.
 #
 # To get information on the use of 'test', type at the command line:
 # 'help test`
 #
+echo "Bash-easy by Codefrogs"
 
 # Test to see if this file exists.
 filename="basics-27-test-with-test.sh"

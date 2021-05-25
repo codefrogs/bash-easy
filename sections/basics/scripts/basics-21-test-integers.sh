@@ -1,10 +1,8 @@
 #!/bin/bash
 # Bash-easy by Codefrogs
-# Using the if statement
-echo "Bash-easy by Codefrogs"
+
 # Using if with integers
 # No floats here!
-
 # We can use:
 # -gt (greater than)
 # -lt (less than)
@@ -12,6 +10,9 @@ echo "Bash-easy by Codefrogs"
 # -nq (not equal to)
 # -le (less or equal to)
 # -ge (greater or equal to)
+
+echo "Bash-easy by Codefrogs"
+echo
 
 bob="83"
 victor="15"

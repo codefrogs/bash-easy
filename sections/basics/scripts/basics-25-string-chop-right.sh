@@ -1,4 +1,7 @@
 #!/bin/bash
+# Bash-easy by Codefrogs
+echo "Bash-easy by Codefrogs"
+echo
 echo "String chopping from the right."
 echo
 # Summary of operators
