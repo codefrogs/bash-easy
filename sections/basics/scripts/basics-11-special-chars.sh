@@ -12,7 +12,7 @@ echo "Dollar   : \$"  # Is a special character
 echo "Quote    : \""
 echo "Ampersand: \&"
 
-#Single quotes!
+# Single quotes!
 # No need for backslash.@
-#Alternatively we can do:
+# Alternatively we can do:
 echo 'With single quotes: Dollar: $, Quote " Ampersand: &'
