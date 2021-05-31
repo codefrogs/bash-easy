@@ -1,0 +1,2 @@
+This is file-1.txt
+It has only 2 lines of text.
