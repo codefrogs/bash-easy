@@ -15,6 +15,23 @@ echo
 # Using '##'
 # This means remove from the left the most that matches.
 
+# A path to a document.
+val="//home/robert/Documents/thesis.doc"
+echo "0 path  is    : $val"
+
+# Remove the filename, leaving the path
+result="${val%/*}"
+echo "1: using %/*  : $result"
+
+# Remove the longest match.
+# As '/' is at the start, the result is empty.
+result="${val%%/*}"
+echo "1: using %%/* : $result"
+
+echo
+echo "---------------------------------"
+echo
+
 # Some line of text. Notice the two pm's.
 val="Three pm's - time now: 12:45 pm pm"
 echo "0 sentence is         : $val"
