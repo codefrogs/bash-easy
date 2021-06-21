@@ -61,7 +61,8 @@ echo "Date now: $datenow"
 p=$(get_prime)
 echo "Prime: $p"
 
-# Using return
+# Get the return status
+# 0 -> success, othewise failure.
 get_status
 state=$?
 echo "Status: $state"
