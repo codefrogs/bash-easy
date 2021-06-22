@@ -6,6 +6,10 @@
 # 'help test`
 #
 echo "Bash-easy by Codefrogs"
+echo
+echo "Using 'test'"
+echo "------------"
+echo
 
 # Test to see if this file exists.
 filename="basics-20-test-with-test.sh"
