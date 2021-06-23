@@ -62,3 +62,25 @@ sentence="peter picked a pick of pickled peppers."
 echo "7 Sentence is  : $sentence"
 result=${sentence##*pick}
 echo "8 using ##*pick: $result"
+echo
+
+# Example of removing lines of text with newline character
+bar="-----"
+line="$bar\n"
+
+# Using line continuation here with '\'
+# Notice we have to use {} notation otherwise the text get's mixed up with
+# variable names.
+header="${line}\
+Title\n\
+${line}"
+
+echo -e "9:Example header:\n$header"
+
+header="${header#$bar\\n}"
+echo "Removed bar line:"
+echo -e "$header"
+
+header="${header#*\\n}"
+echo "Removed title line:"
+echo -e "$header"
