@@ -44,7 +44,7 @@ done < data/phonebook.csv
 echo
 IFS="$OLDIFS"
 
-# Reading lines of text, with '\n' as a seperator.
+# Using 'cat' to read lines of text, with '\n' as a seperator.
 echo "5: Reading lines: Using IFS"
 echo "---------------------------"
 echo
