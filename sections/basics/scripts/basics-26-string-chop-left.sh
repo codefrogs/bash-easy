@@ -84,3 +84,20 @@ echo -e "$header"
 header="${header#*\\n}"
 echo "Removed title line:"
 echo -e "$header"
+
+# But watch out!
+header=$(echo -e "${line}\
+Title\n\
+${line}")
+
+echo -e "10:Gotcha header:\n$header"
+echo
+
+header="${header#$bar\\n}"  # Will not work...'\n' is just text!
+echo "Trying to remove bar line:"
+echo -e "$header"
+echo
+
+header="${header#$bar[[:space:]]}"
+echo "Finally removed bar line:"
+echo -e "$header"
