@@ -1,4 +1,5 @@
-
+# A script for running tests in just this directory.
+#
 echo "---------"
 echo "tests_run"
 echo "---------"
