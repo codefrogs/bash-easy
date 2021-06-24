@@ -4,12 +4,12 @@ echo "---------"
 echo "tests_run"
 echo "---------"
 echo
-_root=$(pwd)
-_root=${_root%/*}  # Remove the last directory
-export _root
+d=$(pwd)
+_lib=${d%/*}  # Remove the last directory
+_lib="${_lib}/lib"
+export _lib
 
-#echo "Root: $_root"
-source ../lib/testing-library.sh
+source $_lib/testing-library.sh
 
 run_tests
 test_summary

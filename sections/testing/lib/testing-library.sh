@@ -162,7 +162,7 @@ function run_test()
   #echo "RUN_TEST filename: $1"
   filename=$1
   test_case=$2
-  ($_root/lib/run_test_func.sh $filename $test_case)
+  ($_lib/run_test_func.sh $filename $test_case)
   local result=$?
 
   return $result

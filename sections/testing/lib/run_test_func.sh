@@ -5,8 +5,9 @@
 # param1: test get_filename.
 # param2: the test function to call.
 # returns: the exit code 0 for success, false otherwise.
+set -u  # Exit on unknown variables
 
-source $_root/lib/testing-library.sh
+source $_lib/testing-library.sh
 test_file=$1
 test_func=$2
 
