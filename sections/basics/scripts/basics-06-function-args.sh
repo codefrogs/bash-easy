@@ -2,6 +2,7 @@
 # Bash-easy by Codefrogs
 echo "Bash-easy by Codefrogs"
 echo
+
 #
 # A simple function that just outputs to screen
 #
@@ -55,6 +56,7 @@ do_stuff
 printf "3: "
 display_this "Look no hands!"
 
+# set -u # Would fail with this: does not allow undefined variables.
 echo "4: Using display_this() without an argument!"
 printf "4: "
 display_this
