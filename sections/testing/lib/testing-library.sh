@@ -1,8 +1,29 @@
 #!/bin/bash
-# Test library functions
-# To test difference between variables:
-# - assert_str <eq/ne> <expected> <actual>
-# - assert_int <eq/ne> <expected> <actual>
+#
+# The Test library
+# ----------------
+#
+# This library allows for unit tests.
+# A file with the name 'test_<name>.sh' is a test case.
+# Test case files should contain functions made up of assert statements.
+#
+# To run all the tests in the project, execute the script: test_all.sh
+# This will search the project directory structure for directories named 'test'.
+# Any file starting with 'test_' will be treated as a test case.
+#
+# To make assertions use the following:
+# - assert_str <eq/ne> <desc> <expected> <actual>
+# - assert_int <eq/ne> <desc> <expected> <actual>
+#
+#  An assert can use either the equality operator 'eq', or 'ne', its negation.
+#  desc: the assert description/name, which is displayed when an assert fails.
+#  expected: the expected value.
+#  actual: the actual value.
+#
+# Example:
+#   h_expected=2
+#   h_actual=2
+#   assert_int eq "height check" $h_expected $h_actual
 #
 set -u  # Exit on unknown variables
 test_cnt=0  # The number to tests
@@ -36,7 +57,7 @@ function test_summary()
   printf "%s\n" $header
   printf "Test summary\n"
   printf "%s\n" $header
-  
+
   if ((test_cnt == 0)); then
     echo "No tests were run!"
     printf "%s\n" $header
