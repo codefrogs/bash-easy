@@ -168,6 +168,9 @@ function run_test()
   return $result
 }
 
+# Runs all the test cases in directory, and sub directories.
+# param1: the directory to search for tests.
+#         If this is not set, the current directory is assumed.
 function run_tests()
 {
   # A. For each file starting with 'test_'
@@ -178,16 +181,41 @@ function run_tests()
   #      b. update the test results
   #  B. Show test test_summary
   #
-  test_suites=$(find . -name 'test_*.sh')
 
-  for suite_file in $test_suites; do
+  # Check for default path.
+  path=""
+  if [[ $# = 0 ]]; then  # If we have arguments
+    path="."  # Assume currently directory if a path is not given
+  else
+    path=$1
+  fi
+
+  # Verify starting path is a directory.
+  if ! [[ -d $path ]]; then
+    printf "Not a directory: %s" "$path"
+    return 1
+  fi
+
+  # Find all the test scripts
+  test_files=$(find "$path" -name 'test_*.sh')
+  #echo "Files: $test_files"
+
+  for test_file in $test_files; do
     # Get function list.
-    # Do we use sed/awk/grep
-    functions=$(grep -E '^\s*function test_\w*\s*\(\s*\)' "$suite_file")
+    # We use grep
+    functions=$(grep -E '^\s*function test_\w*\s*\(\s*\)' "$test_file")
+
+    # Check for case a test file has no functions!
+    if [[ ${#functions} = 0 ]]; then
+      #filename=$(get_filename $test_file)
+      printf "IGNORED: %s\n" "$test_file"
+      continue
+    fi
+
     functions=$(echo "$functions" | tr '\n' ',') # convert into a csv
     IFSOLD=$IFS # store old IFS
     IFS=","
-    filename=$(get_filename $suite_file)
+    filename=$(get_filename $test_file)
     printf "Test File: %s\n" "$filename"
     for test_func in $functions; do
       func_name=${test_func##function }  # remove function keyword
@@ -195,7 +223,7 @@ function run_tests()
       func_name=${func_name%%(*} # remove brackets
       func_name=${func_name%% }  # remove right spaces
       printf "Test: \t%s: " "$func_name"
-      run_test "$suite_file" "$func_name"
+      run_test "$test_file" "$func_name"
       test_result=$?
       ((++test_cnt))
       if ((test_result==0)); then
@@ -204,7 +232,6 @@ function run_tests()
       else
         echo "FAIL"
       fi
-        #printf "\t%s: $test_result\n" $func_name
     done
     echo
   done
