@@ -16,7 +16,7 @@ echo "The variable something is unknown: $something"  # shows empty space
 # Configure undefined variables to issue error message and STOP.
 set -u
 echo "This is unknown: $something"
-echo "This is never shown."
+echo "X: This is never shown."
 
 # Revert configration change
 # set +u
