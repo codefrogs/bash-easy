@@ -45,6 +45,7 @@ echo "3 using ##/ : $result"
 # Get the filename
 # Using '##' -> remove the longest match.
 # Our pattern can contain multiple characters and end in '/'.
+# Alternatively use 'basename'.
 result="${val##*/}"
 echo "4 using ##*/: $result"
 
