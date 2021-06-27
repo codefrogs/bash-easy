@@ -1,7 +1,7 @@
 #!/bin/bash
 # Bash-easy by Codefrogs
-#
-# Realpath example
+# Description: Get the full path from a relative path.
+# Usage: realpath <path>
 #
 echo "Bash-easy by Codefrogs"
 echo

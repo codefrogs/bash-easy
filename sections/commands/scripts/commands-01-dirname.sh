@@ -1,7 +1,7 @@
 #!/bin/bash
 # Bash-easy by Codefrogs
-#
-# Dirname example
+# Description: Get the directory name only.
+# Usage: dirname <path>
 #
 echo "Bash-easy by Codefrogs"
 echo

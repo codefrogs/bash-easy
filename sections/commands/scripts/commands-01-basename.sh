@@ -1,7 +1,7 @@
 #!/bin/bash
 # Bash-easy by Codefrogs
-#
-# Basename example
+# Description: Get the filename from a full path.
+# Usage: basename <path>
 #
 echo "Bash-easy by Codefrogs"
 echo
