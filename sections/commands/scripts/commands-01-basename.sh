@@ -1,7 +1,7 @@
 #!/bin/bash
 # Bash-easy by Codefrogs
 #
-# Dirname example
+# Basename example
 #
 echo "Bash-easy by Codefrogs"
 echo
