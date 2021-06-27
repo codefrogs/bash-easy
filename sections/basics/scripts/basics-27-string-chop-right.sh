@@ -19,7 +19,8 @@ echo
 val="//home/robert/Documents/thesis.doc"
 echo "0 path  is    : $val"
 
-# Remove the filename, leaving the path
+# Remove the filename, leaving the path.
+# Alternatively use 'dirname'.
 result="${val%/*}"
 echo "1: using %/*  : $result"
 
