@@ -2,7 +2,9 @@
 # Library of file-indexing functions
 # see: shiftup
 
-# param: path - filename
+# Returns the index number string in a string.
+# Indexes can be prefixed with '0'.
+# param1: string with a index.
 function get_index {
   local path=$1
   index=$(echo $path | tr -d '[:alpha:][:punct:]')
@@ -20,7 +22,7 @@ function up_index {
 }
 
 # Returns the last index (largest) in the directory
-#param: index - start index
+# param: index - start index
 function get_last_index {
   local index_start=$1
   local index_max=$index_start
