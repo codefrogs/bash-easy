@@ -20,6 +20,9 @@
 #  expected: the expected value.
 #  actual: the actual value.
 #
+# Test files are IGNORED if they do not contain functions of the form:
+# 'function test_* ()'
+#
 # Example:
 #   h_expected=2
 #   h_actual=2
