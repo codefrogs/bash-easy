@@ -1,8 +1,10 @@
 # A script for running tests in just this directory.
 #
-echo "---------"
-echo "tests_run"
-echo "---------"
+
+echo "Local testing ONLY"
+echo "******************"
+echo
+
 echo
 d=$(pwd)
 _lib=${d%/*}  # Remove the last directory
