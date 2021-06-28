@@ -1,8 +1,9 @@
 #!/bin/bash
 # Bash-easy by Codefrogs
+#
+# Printf examples
+#
 echo "Bash-easy by Codefrogs"
-
-#Lets look at printf
 
 #No new line with this
 printf "Hello World!..."
