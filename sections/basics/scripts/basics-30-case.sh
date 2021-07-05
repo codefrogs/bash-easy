@@ -66,9 +66,15 @@ esac
 
 # Integer ranges > 9 ?
 # NO! Use if-else.
+# Because the code below isn't going to work as expected!
 #
-# num="42"
-# case $num in
-# 1) ..
-# 2) ..
-# 3) ..
+
+num=5  # is OK
+# num="42" # is NOT OK
+case $num in
+  [1-3]) echo "X:1-3" ;;
+  [4-5]) echo "7: 3-5" ;;
+  [6-9]) echo "X: 6-9" ;;
+  [10-30]) echo "X: 10-30" ;;
+  [31-100]) echo "X: Meaning of life."
+esac
