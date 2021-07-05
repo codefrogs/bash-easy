@@ -17,14 +17,11 @@ function show_info()
 
 function show_help()
 {
-  echo "inter-05.1-simple:"
-  echo "An example script with options"
-  echo "Usage: "
-  echo "  script [options] <item1> <item2>"
-  echo "  Options:"
-  echo "       -v | --version: Shows the current version number"
-  echo "       -i | --info: Shows info about this script."
-  echo "       -h | --help: Shows this help message."
+  echo "Usage: script [options] <item1> <item2>"
+  echo
+  echo "  -h, --help    print this help message and exit"
+  echo "  -i, --info    infomation about this script"
+  echo "  -v, --version print version"
   echo
 }
 
@@ -38,13 +35,19 @@ function process_arg_two ()
   echo "Arg two: $1"
 }
 
-# Process options
-pos_arg=0
+function read_user ()
+{
+  echo "User: $1"
+}
+
+# Process options: notice they are in alphabetical order.
+# It's easier to maintain that way.
 while [ $1 ]; do
   case "$1" in
-    -v | --version )  show_version; shift; ;;
-    -i | --info )     show_info;    shift; ;;
     -h | --help )     show_help;    exit 1 ;;
+    -i | --info )     show_info;    shift; ;;
+    -u | --user )     shift; read_user $1; shift; ;;
+    -v | --version )  show_version; shift; ;;
     -* ) echo "Unknown option: $1"; exit 2; ;;
     *  )  break ;;
   esac
