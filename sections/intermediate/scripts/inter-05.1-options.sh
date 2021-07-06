@@ -21,6 +21,7 @@ function show_help()
   echo
   echo "  -h, --help    print this help message and exit"
   echo "  -i, --info    infomation about this script"
+  echo "  -u, --user    user name"
   echo "  -v, --version print version"
   echo
 }
