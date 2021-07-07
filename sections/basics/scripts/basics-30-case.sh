@@ -69,12 +69,15 @@ esac
 # Because the code below isn't going to work as expected!
 #
 
-num=5  # is OK
-# num="42" # is NOT OK
+# num=5    # OK, and so is 1,2,3,4,5,6,7,8,9
+# num="42" # Doesn't get picked up by the [31-100] case.
+# num=8363 # This works...
+# num=1BOB # But this is also seen as a number! OH NO
 case $num in
-  [1-3]) echo "X:1-3" ;;
-  [4-5]) echo "7: 3-5" ;;
-  [6-9]) echo "X: 6-9" ;;
-  [10-30]) echo "X: 10-30" ;;
-  [31-100]) echo "X: Meaning of life."
+  [1-3])    echo "X:1-3" ;;   # Works for 1,2,3
+  [4-5])    echo "7: 3-5" ;;  # Works for 4,5
+  [6-9])    echo "X: 6-9" ;;  # Works for 6,7,8,9
+  [10-30])  echo "X: 10-30" ;;  # Never gets called.
+  [31-100]) echo "X: Meaning of life." ;; # Nor this!
+  [0-9]*)   echo "X: number is: $num" ;;  # Sort of works... even if num=1BOB
 esac
