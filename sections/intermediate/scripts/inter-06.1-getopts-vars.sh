@@ -8,14 +8,20 @@
 # OPTERR - flag used for getopts to display error messages
 
 optstring="hiu:v"  # defines four options, hiuv
-                   # the colon means the 'u' has an argument
-
-while getopts "$optstring" opt  # name is the option value
+                   # the colon after the u means the 'u' has an argument.
+#echo "Options are: $optstring"
+echo
+while getopts "$optstring" opt  # 'opt' is the option value
 do
-  echo "option: $opt"  # the option name
+  if [[ $opt == '?' ]]; then
+    #args=$@
+    printf "Usage: %s [-h] [-i] [-u <user>] [-v]\n" ${0##*/} >&2
+  else
+    echo "Option: $opt"
+  fi
   #if [[ $OPTARG ]]; then echo "OPTARG: $OPTARG"; fi
-  [[ $OPTARG ]] && echo "OPTARG: $OPTARG" # the argument for an option
-  echo "OPTIND: $OPTIND"  # the index of the next argument
+  [[ $OPTARG ]] && echo "Argument (OPTARG): '$OPTARG'" # the argument for an option
+  echo "Option index: $OPTIND"  # the index of the next argument
 done
 echo
 echo "Final"
