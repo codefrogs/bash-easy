@@ -61,7 +61,6 @@ if [ "$hello" == "$greeting" ]; then
   echo "7: Using non-standard equality operator '==': '$hello' == '$greeting'."
 fi
 
-
 if ! [ "$hello" = "$bye" ]; then
   echo "8: Using negation: '! []', '$hello' does NOT equal '$bye'."
 fi
