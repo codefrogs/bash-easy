@@ -22,7 +22,7 @@ fi
 
 amp1=55
 amp2=55
-if ((amp1==amp2)); then
+if ((amp1==amp2)); then  # Careful: NOT amp1=amp2!
   echo "2: Amplitude same: $amp1 = $amp2"
 fi
 
