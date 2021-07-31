@@ -1,6 +1,7 @@
 #!/bin/bash
 # Bash-easy by Codefrogs
-# Running another script, and using the return code.
+# Running scripts with arguments
+# see: help shift
 echo "Bash-easy by Codefrogs"
 echo
 
