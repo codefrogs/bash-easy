@@ -1,0 +1,69 @@
+#!/bin/bash
+# Bash-easy by Codefrogs
+# Searches files for text.
+# An alternative to using find and grep to search for text in files.
+
+MAJOR=1  # version: major value
+MINOR=0  # version: minor value
+PATCH=0  # version: patch value
+
+function show_version()
+{
+  printf "%s, version %s.%s.%s\n" $(basename $0) $MAJOR $MINOR $PATCH
+}
+
+# Shows one-liner help
+function show_usage()
+{
+  printf "Usage: %s <path> -n <filename pattern> -t <text>\n" "${0##*/}"
+}
+
+# Shows help for this script
+function show_help()
+{
+  show_usage
+  printf "\nSearches for text in regular files.\n"
+  printf "Options:\n \
+  n - file-name pattern (enclosed in quotes, e.g. '*.txt')\n \
+  h - shows this help.\n \
+  t - text to search for.\n \
+  v - shows version.\n"
+  printf "Example:\n \
+  tfind . -name '*.txt' -t 'metropolis'\n\n"
+}
+
+options="hn:t:v"
+
+if (($# > 5 | $# == 0 )); then
+  show_usage
+  exit 2
+fi
+
+# Check we don't have an option here
+if [[ ${1:0:1} != "-" ]]; then
+  path=$1; shift   # Get search path
+else
+  path="." # start search in current directory
+fi
+name="*"  # default filename search pattern
+
+while getopts $options opt
+  do
+    case $opt in
+      h) show_help; exit 0;;
+      v) show_version; exit 0;;
+      n) name="$OPTARG";;
+      t) text="$OPTARG";;
+      ?) show_usage; exit 1;;
+    esac
+done
+# shift $(($OPTIND-1))  # Not really needed
+# echo "Path: $path"
+# echo "Name: $name"
+# echo "Text: $text"
+
+#find "$path" -name "$pattern" -type f -exec file '{}' \;
+filenames=$(find "$path" -name "$name" -type f -exec grep -m 1 -l "$text" '{}' \;)
+for file in $filenames; do
+  echo "$file"
+done
