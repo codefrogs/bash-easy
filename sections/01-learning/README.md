@@ -1,11 +1,7 @@
-# Sections
+# Learning
 
 ## 01-basics
-Scripts for learning bash in an easy stepwise fashion.
+Basic operations in bash.
 
 ## 02-intermediate
-Contains various example scripts for reference.
-
-## testing
-Used for testing the files in this repo only. 
-(You may safely ignore it).
+Intermediate scripts, including use of arguments, and menus.
