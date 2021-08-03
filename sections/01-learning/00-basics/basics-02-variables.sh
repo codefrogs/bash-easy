@@ -19,7 +19,13 @@ product="chair"  # string
 bird=chicken     # string
 height=98        # integer
 width=23.3       # float (although is treated as a string!)
-# width = 23.3   # NO!
+
+# Declare integers
+declare -i dist=145 # Declaring an integer, (which can't be changed to a string)
+                    # see: declare --help
+
+# Floats?
+# width = 23.3   # NO! Floats aren't supported.
 
 #Constant Variables
 readonly gravity=9.81
@@ -27,3 +33,12 @@ readonly dob="17/05/1988"
 
 # We can't do this with readonly variables.
 # gravity=1.0
+
+# Uncomment to see what effect 'declare' has.
+# echo "dist (before)= $dist"
+# dist='a'
+# echo "dist (after)= $dist"
+#
+# echo "height (before)=$height"
+# height='bac'
+# echo "height (after)=$height"
