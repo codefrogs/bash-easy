@@ -25,10 +25,10 @@ echo "Item[-2]: ${items[-2]}"
 echo "Item[-3]: ${items[-3]}"
 echo
 echo "---Expand all with '@'---"
-echo "${items[@]}"
+echo "${items[@]}"  # expand with each quoted
 echo
 echo "---Expand all with '*'---"
-echo "${items[*]}"
+echo "${items[*]}"  # expand as single item
 echo
 echo "---Changing an item---"
 items[0]='Fire'
