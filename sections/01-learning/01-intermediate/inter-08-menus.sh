@@ -1,5 +1,6 @@
 #!/bin/bash
 # Bash-easy by Codefrogs
+#
 # Menu example using 'select'
 # Note: CTRL-D exits the menu.
 #
@@ -11,6 +12,9 @@ opt4_linux_dist="Get Linux distribution name"
 opt5_exit="Exit"
 options=("$opt1_disk_usage" "$opt2_ip_address" "$opt3_quote" "$opt4_linux_dist" "$opt5_exit")
 
+quotes_file="$(dirname $0)/inter-08.1-quotes.txt"
+
+# Display disk usage
 function show_disk_usage()
 {
   df_text=$(df . -h | sed -n 2p)
@@ -21,19 +25,51 @@ function show_disk_usage()
   printf "Free : %5s\n" "$free"
   printf "Total: %5s\n" "$total"
 }
+
+# Show the IP address of this machine
 function show_ip()
 {
-  echo "show_ip: implement"
+  #address=$(ifconfig)  # deprecated!
+  #address=$(ip addr show)  # More info IPv4 and IPv6 (also: ip a)
+  address=$(hostname -I)
+  echo "IP: $address"
 }
 
+# Display a quotation
 function show_quote()
 {
-  echo "show_quote: implement"
+  if ! [[ -e $quotes_file ]]; then
+    echo "Missing quotes file: $quotes_file"
+    return 1
+  fi
+  line_cnt=$(wc -l $quotes_file | cut -d ' ' -f1)
+  line_no=$(($RANDOM % line_cnt))
+  quote=$(sed -n ${line_no}p $quotes_file)
+
+  echo "$quote"
 }
 
+# Show name of Linux distribution
 function show_distribution()
 {
-  echo "show_distribution: implement"
+  cmd=$(which lsb_release)
+  if [[ $? ]]; then
+    dist_text=$(lsb_release -a 2> /dev/null | sed -n 2p | cut -d ':' -f2) # remove error messages
+    dist_text="${dist_text#"${dist_text%%[![:space:]]*}"}"  # left trim
+    echo $dist_text
+    return
+  fi
+
+  cmd=$(which cat)
+  if [[ $? ]]; then
+    dist_text=$(cat /etc/*release | grep '^NAME' | cut -d '=' -f2)
+    dist_text=${dist_text#\"} # remove quotes
+    dist_text=${dist_text%\"}
+    echo "$dist_text"
+    return
+  fi
+
+  echo "Can't find distro name!"
 }
 
 PS3="Enter: " # prompt after menu is displayed
@@ -55,4 +91,5 @@ do
     5) exit 0;;
     *) echo "Unknown option." ;; # Should never get here
   esac
+  echo
 done
