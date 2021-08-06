@@ -65,7 +65,7 @@ i=$((++i))
 # i=$((++i))
 
 # echo
-# echo "Trim spaces right"
+# echo "Trim spaces left"
 # Match anything not a space
 right_chop="${line%%[! ]*}"  # [! ] => not space
 trim_left="${line#$right_chop}"  # 1[! ] => not space
