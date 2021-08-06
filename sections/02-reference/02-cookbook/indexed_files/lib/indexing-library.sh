@@ -18,7 +18,7 @@ function up_index {
   # increase
   # rename file
   #echo "up_index($path)"
-  echo "hi"
+  echo "todo: implement"
 }
 
 # Returns the last index (largest) in the directory
