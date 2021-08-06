@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "$_root/cookbook/indexed_files/lib/indexing-library.sh"
+source "$_root/02-reference/02-cookbook/indexed_files/lib/indexing-library.sh"
 
 function test_string_index_at_start ()
 {
@@ -38,7 +38,7 @@ function test_up_index ()
 {
   filename="subject-33-data.txt"
   expected="subject-34-data.txt"
-  new_file=up_index $filename
+  actual=$(up_index $filename)
 
-  assert_str eq "up_index" "$expected" "$index"
+  assert_str eq "up_index" "$expected" "$actual"
 }
