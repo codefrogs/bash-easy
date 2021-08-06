@@ -12,7 +12,7 @@ opt4_linux_dist="Get Linux distribution name"
 opt5_exit="Exit"
 options=("$opt1_disk_usage" "$opt2_ip_address" "$opt3_quote" "$opt4_linux_dist" "$opt5_exit")
 
-quotes_file="$(dirname $0)/inter-08.1-quotes.txt"
+quotes_file="$(dirname $0)/data/quotes.txt"
 
 # Display disk usage
 function show_disk_usage()
