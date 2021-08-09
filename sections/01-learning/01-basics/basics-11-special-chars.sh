@@ -16,3 +16,11 @@ echo "Ampersand: \&"
 # No need for backslash.@
 # Alternatively we can do:
 echo 'With single quotes: Dollar: $, Quote " Ampersand: &'
+
+echo
+echo "Percent sign with printf"
+echo "--------------------------"
+echo
+
+#printf "Percent: %"  # BAD - percent sign
+printf "Percent: %%\n"  # OK - prints '%'
