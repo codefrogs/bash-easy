@@ -16,10 +16,12 @@ function trim_rhs()
   echo "${text%${text##*[! ]}}"  # 1[! ] => not space
 }
 
+# Trims spaces on either side of a string
+# param 1: string to trim
 function trim()
 {
   local text=$1
-  text=$(trim_lhs($text))
-  text=$(trim_rhs($text))
+  text=$(trim_lhs "$text")
+  text=$(trim_rhs "$text")
   echo $text
 }
