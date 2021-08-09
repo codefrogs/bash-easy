@@ -14,4 +14,4 @@ export exported_var="Exported in the parent"
 echo "Parent: local_var    = " $local_var
 echo "Parent: exported_var = " $exported_var
 echo
-./basics-11.1-export-child.sh
+./basics-12.1-export-child.sh
