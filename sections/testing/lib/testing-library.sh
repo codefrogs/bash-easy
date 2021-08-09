@@ -72,8 +72,8 @@ function test_summary()
 
   failed=$(failed_cnt)  # get failed count
 
-  printf "Passed: %s (%.1f)\n" $passed_cnt $pass_percent
-  printf "Failed: %s (%.1f)\n" $failed     $fail_percent
+  printf "Passed: %s (%.1f%%)\n" $passed_cnt $pass_percent
+  printf "Failed: %s (%.1f%%)\n" $failed     $fail_percent
   printf "Total: %s\n" $test_cnt
   printf "%s\n" $header
 }
@@ -84,6 +84,21 @@ function test_clear ()
 {
   test_cnt=0
   passed_cnt=0
+}
+
+# Shows the assert failure message and expected value.
+# param 1: error message
+# param 2: the expected value
+# param 3: actual value
+function show_assert_msg()
+{
+  local msg=$1
+  local exp=$2
+  local act=$3
+
+  printf "%9s: %s\n" "Assert" "$1"
+  printf "%9s: %s\n" "Expected" "'$exp'"
+  printf "%9s: %s\n" "Actual" "'$act'"
 }
 
 #Tests if two strings are the same
@@ -106,19 +121,20 @@ function assert_str()
   elif [ $type == 'ne' ]; then
     op='!='
   else
-    print "Unknown operator: $type"
+    printf "Unknown operator: $type"
     return
   fi
   # TODO: Add NOT
   if ! [ "$expected" $op "$actual" ]; then
     #printf "T%d: %25s : OK\n" $test_cnt "$test_name"
     #((++assert_ok))
-
-    printf "Assert(%s) FAILED ->\n\tExpected: %s\n\t Actual: %s\n" "$assert_msg" "$expected" "$actual"
+    show_assert_msg "$assert_msg" "$expected" "$actual"
     result=1
   fi
   return $result
 }
+
+
 
 #Tests if two integers are the same
 # param 1: comparison type of 'eq' or 'ne'
@@ -140,7 +156,7 @@ function assert_int()
   elif [ $type == 'ne' ]; then
     op='!='
   else
-    print "Unknown operator: $type"
+    printf "Unknown operator: $type"
     return
   fi
 
@@ -148,8 +164,8 @@ function assert_int()
   #   printf "T%d: %25s : OK\n" $test_cnt "$test_name"
   #   ((++assert_ok))
   # else
-    printf "Assert FAILED -> Expected: !%s Actual: %s\n" "$assert_msg" "$expected" "$actual"
-    #caller  # Show stack trace
+    show_assert_msg "$assert_msg" "$expected" "$actual"
+  #caller  # Show stack trace
     result=1
   fi
   return $result
@@ -211,7 +227,7 @@ function run_tests()
     # Check for case a test file has no functions!
     if [[ ${#functions} = 0 ]]; then
       #filename=$(get_filename $test_file)
-      printf "IGNORED: %s\n" "$test_file"
+      printf "IGNORED (no funcs): %s\n" "$test_file"
       continue
     fi
 
@@ -225,15 +241,18 @@ function run_tests()
       func_name=${func_name## }  # remove left spaces
       func_name=${func_name%%(*} # remove brackets
       func_name=${func_name%% }  # remove right spaces
-      printf "Test: \t%s: " "$func_name"
-      run_test "$test_file" "$func_name"
+
+      test_info=$(run_test "$test_file" "$func_name")
       test_result=$?
       ((++test_cnt))
       if ((test_result==0)); then
         ((++passed_cnt))
-        echo "PASS"
+        printf "Test(%s): %s\n" "PASS" "$func_name"
+        #echo "PASS"
       else
-        echo "FAIL"
+        printf "Test(%s): %s\n" "FAIL" "$func_name"
+        echo "$test_info"
+        #echo "FAIL"
       fi
     done
     echo
