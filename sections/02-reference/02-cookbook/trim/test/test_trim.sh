@@ -40,7 +40,25 @@ function test_trim_left_on_empty_spaces_only ()
   assert_str eq "should_be_an_empty_string" "$expected" "$actual"
 }
 
-# ----------------------------------------------------------------
+# ---- test_trim_left with delimiter
+function test_trim_left_remove_dashes_on_left ()
+{
+  text="---The cat sat on the mat...---"
+  expected="The cat sat on the mat...---"
+  actual=$(trim_lhs -d - "$text")
+  assert_str eq "should have removed '-' from left" "$expected" "$actual"
+}
+
+function test_trim_left_remove_dashes_on_left_for_dashed_text ()
+{
+  text="---The-cat-sat-on-the-mat...---"
+  expected="The-cat-sat-on-the-mat...---"
+  actual=$(trim_lhs -d - "$text")
+  assert_str eq "should have removed '-' from left" "$expected" "$actual"
+}
+
+
+# -------------------------test_trim_right---------------------------------------
 
 function test_trim_right_on_string_without_spaces ()
 {
@@ -82,6 +100,25 @@ function test_trim_right_on_empty_spaces_only ()
   assert_str eq "should_be_an_empty_string" "$expected" "$actual"
 }
 
+# ---- test_trim_left with delimiter
+function test_trim_right_remove_dashes_on_right ()
+{
+  text="---The cat sat on the mat...---"
+  expected="---The cat sat on the mat..."
+  actual=$(trim_rhs -d - "$text")
+  assert_str eq "should have removed '-' from right" "$expected" "$actual"
+}
+
+function test_trim_right_remove_dashes_on_right_for_dashed_text ()
+{
+  text="---The-cat-sat-on-the-mat...---"
+  expected="---The-cat-sat-on-the-mat..."
+  actual=$(trim_rhs -d - "$text")
+  assert_str eq "should have removed '-' from right" "$expected" "$actual"
+}
+
+# -------- test trim ------------
+
 function test_trim_on_string_with_spaces()
 {
   text="  The cat sat on the mat...   "
@@ -105,3 +142,5 @@ function test_trim_on_string_with_spaces()
   actual=$(trim "$text")
   assert_str eq "trim on spaces should be an empty string" "$expected" "$actual"
 }
+
+# TODO: Create tests using delimiter
