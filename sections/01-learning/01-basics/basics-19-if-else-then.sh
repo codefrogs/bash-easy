@@ -14,7 +14,16 @@ echo "Bash-easy by Codefrogs"
 # Simple if-then
 colour="white"
 if [[ -n $colour ]]; then
-   echo "1: if Colour: $colour"
+   echo "1: colour= $colour"
+fi
+
+# Using && (AND) in an if statement
+gamma="high"
+black_level="low"
+
+if [[ $gamma = "high" ]] && [[ $black_level = "low" ]]; then
+  gamma="low"
+  echo "2: gamma= $gamma"
 fi
 
 # Just for comparison with an empty string
@@ -25,25 +34,25 @@ fi
 
 # if-then-else example
 if [[ -n $hue ]]; then
-   echo "2: if Hue: $hue"
+   echo "X: if Hue: $hue"
 else
-   echo "2: else Hue: undefined."
+   echo "3: else Hue: undefined."
 fi
 
 # if-then-elfi example
 transparency=0.8
 if [[ -n $opacity ]]; then
-   echo "3: if Opacity: $opacity"
+   echo "X: if Opacity: $opacity"
 elif [[ -n $transparency ]]; then
-   echo "3: elif Transparency: $transparency"
+   echo "4: elif Transparency: $transparency"
 fi
 
 # if-then-elfi-else example
 brightness=0.95
 if [[ -n $darkness ]]; then
-   echo "3: if Darkness: $darkness"
+   echo "X: if Darkness: $darkness"
 elif [[ -n $contrast ]]; then
-   echo "3: elif Contrast: $contrast"
+   echo "X: elif Contrast: $contrast"
 else
-  echo "3: else Brightness: $brightness"
+  echo "5: else Brightness: $brightness"
 fi
