@@ -144,3 +144,19 @@ function test_trim_on_string_with_spaces()
 }
 
 # TODO: Create tests using delimiter
+
+function test_trim_on_string_with_dashes()
+{
+  text="---The cat sat on the mat...---"
+  expected="The cat sat on the mat..."
+  actual=$(trim -d - "$text")
+  assert_str eq "trim should remove dashes on both left and right" "$expected" "$actual"
+}
+
+function test_trim_remove_space_around_option_text()
+{
+  text=" -d "
+  expected="-d"
+  actual=$(trim "$text")
+  assert_str eq "trim is treating a dash as an option?" "$expected" "$actual"
+}

@@ -2,17 +2,13 @@
 # Bash-easy by Codefrogs
 # Trims space from text.
 
-# TODO: Create delimiter function
-
 # Trims whitespace from the left of a string
 function trim_lhs()
 {
   delimiter=" "
-  if [[ "$1" = "-d" ]]; then
-    if (( ${#2} == 1 )); then  # Should be a quoted string
+  if [[ $# = 3 ]] && [[ "$1" = "-d" ]] && (( ${#2} == 1 )); then  # Should be a quoted string
       delimiter=$2
       shift 2
-    fi
   fi
 
   local text=$1
@@ -23,11 +19,9 @@ function trim_lhs()
 function trim_rhs()
 {
   delimiter=" "
-  if [[ "$1" = "-d" ]]; then
-    if (( ${#2} == 1 )); then  # Should be a quoted string
+  if [[ $# = 3 ]] && [[ "$1" = "-d" ]] && (( ${#2} == 1 )); then  # Should be a quoted string
       delimiter=$2
       shift 2
-    fi
   fi
 
   local text=$1
@@ -38,8 +32,14 @@ function trim_rhs()
 # param 1: string to trim
 function trim()
 {
+  delimiter=" "
+  if [[ $# = 3 ]] && [[ "$1" = "-d" ]] && (( ${#2} == 1 )) ; then
+    delimiter="-d $2"
+    shift 2
+  fi
+
   local text=$1
-  text=$(trim_lhs "$text")
-  text=$(trim_rhs "$text")
+  text=$(trim_lhs $delimiter "$text")
+  text=$(trim_rhs $delimiter "$text")
   echo $text
 }
