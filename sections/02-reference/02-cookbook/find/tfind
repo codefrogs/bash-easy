@@ -7,6 +7,9 @@ MAJOR=1  # version: major value
 MINOR=0  # version: minor value
 PATCH=0  # version: patch value
 
+ERR_BAD_OPTIONS=1
+OPTIONS_REQ=5
+
 function show_version()
 {
   printf "%s, version %s.%s.%s\n" $(basename $0) $MAJOR $MINOR $PATCH
@@ -34,7 +37,13 @@ function show_help()
 
 options="hn:t:v"
 
-if (($# > 5 | $# == 0 )); then
+if (($# > $OPTIONS_REQ | $# == 0 )); then
+  if (($# > $OPTIONS_REQ )); then
+    printf "Too many paramters, found: %\n" $#
+  else
+    printf "No parameters given.\n"
+  fi
+
   show_usage
   exit 2
 fi
@@ -61,6 +70,12 @@ done
 # echo "Path: $path"
 # echo "Name: $name"
 # echo "Text: $text"
+
+if (($OPTIND != $OPTIONS_REQ )); then
+  echo "Invalid options?"
+  show_usage
+  exit $ERR_BAD_OPTIONS
+fi
 
 #find "$path" -name "$pattern" -type f -exec file '{}' \;
 filenames=$(find "$path" -name "$name" -type f -exec grep -m 1 -l "$text" '{}' \;)
