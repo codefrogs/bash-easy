@@ -2,6 +2,7 @@
 # Bash-easy by Codefrogs
 echo "Bash-easy by Codefrogs"
 
+# The parameter count is zero, if no arguments are given.
 echo "Number of parameters: $#"
 
 # Look at the parameters!
