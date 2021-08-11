@@ -29,6 +29,7 @@
 #   assert_int eq "height check" $h_expected $h_actual
 #
 set -u  # Exit on unknown variables
+ERR_BAD_PARAMETERS=1
 test_cnt=0  # The number to tests
 passed_cnt=0
 
@@ -109,6 +110,14 @@ function show_assert_msg()
 # Returns 0 if succeeds, 1 otherwise.
 function assert_str()
 {
+  if (( $#!=4 )); then
+    if (( $# < 4 )); then
+      printf "assert_str: Missing %s parameter(s), found only %s\n" $((4-$#)) $# >&2
+    else
+      printf "assert_str: Too many parameters, found %s, expected only 4\n" $# >&2
+    fi
+    exit $ERR_BAD_PARAMETERS
+  fi
   #((assert_cnt+=1))
   type=$1
   assert_msg=$2
