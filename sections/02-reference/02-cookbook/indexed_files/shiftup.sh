@@ -20,7 +20,7 @@ source lib/indexing-library.sh
 
 function show_help {
   printf "Shifts the indexes in file names in a directory.\n"
-  printf "Gaps in indexes are preserved."
+  printf "Gaps in indexes are preserved.\n"
   printf "Usage: \n"
   printf "       shift <start_index> [*directory="."]\n"
   printf "\n"
@@ -43,7 +43,7 @@ shift
 done
 
 if [[ -z $dir ]]; then
-  $dir="."
+  dir="."
 fi
 
 # Check directory and start index is set.
@@ -64,7 +64,7 @@ last_index=$?
 echo "Last index: $last_index"
 
 # From last index to start index we increase the filename index.
-for (index=$last_index; index>=start_index; --index)
+for (index=$last_index; index>=$start_index; --index)
 {
   filename=$(getfile_at $index)
   if ![[ -e $filename ]]; then;
@@ -72,9 +72,12 @@ for (index=$last_index; index>=start_index; --index)
     continue  # File doesn't exist!
   fi
   new_filename=$(shiftup $filename)
-  if [[ -e $filename ]]; then;
+
+  if [[ -e $new_filename ]]; then;
     print "Unexpected file found: $new_filename" >&2
-    print "Can't re-index: $new_filename" >&2
+    print "Can't re-index: $filename" >&2
     return 1
   fi
+  # Move file
+  echo "$filename->$new_filename"
 }
