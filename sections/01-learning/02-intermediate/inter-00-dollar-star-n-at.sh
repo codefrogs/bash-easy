@@ -1,3 +1,4 @@
+#!/bin/bash
 # Bash-easy by Codefrogs
 # Menu example using 'select'
 # Show the difference between '$*' and '$@'
