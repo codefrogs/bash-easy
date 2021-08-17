@@ -22,12 +22,11 @@ function show_help {
   printf "Shifts the indexes in file names in a directory.\n"
   printf "Gaps in indexes are preserved.\n"
   printf "Usage: \n"
-  printf "       shift <start_index> [*directory="."]\n"
+  printf "       shift -i <index> -d <directory=.>\n"
   printf "\n"
-  printf "       <start_index>: start point for increasing indexes.\n"
-  printf "       <*directory> : optional - directory to update files in.\n"
-  printf "       -i           : interactive.\n"
-  printf "       -h           : show this help.\n"
+  printf "       -i <index>    : start point for increasing indexes.\n"
+  printf "       -d <directory>: directory to work on.\n"
+  printf "       -h            : show this help.\n"
   printf "\n"
 }
 
