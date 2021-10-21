@@ -7,6 +7,7 @@
 # param1: string with a index.
 function get_index {
   local path=$1
+  path=$(basename $path)
   index=$(echo $path | tr -d '[:alpha:][:punct:]')
   echo "$index"
 }
@@ -24,30 +25,27 @@ function up_index {
 # Returns the last index (largest) in the directory
 # param: index - start index
 function get_last_index {
-  local index_start=$1
-  local index_max=$index_start
+  local index_max=$1
   # Go through each file in the directory
   # Not sure what order they come in, as the index may be on the right.
   for path in $dir/*; do
     if [[ -d $path ]]; then
-      continue
+      continue  # is a directory, so skip
     fi
-    i=(get_index $path)
-
-    if (( i < index )); then
-      continue  # out of range
-    fi
-
-    index=get_index $path
-
-    if (( index < index_start )); then
-      continue
-    fi
+    index=$(get_index $path)
 
     if (( index > index_max )); then
-      max_index=indexes
+      index_max=$index
     fi
+
   done
-  echo $
+  echo $index_max
   return 0
+}
+
+# Returns the a list of files with given index
+# param1: file index to find
+function files_at ()
+{
+  echo "TODO: implement"
 }

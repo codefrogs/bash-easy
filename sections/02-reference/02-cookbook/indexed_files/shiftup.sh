@@ -30,6 +30,25 @@ function show_help {
   printf "\n"
 }
 
+# Moves the given file with an index that's increased by one.
+function move_up ()
+{
+  filename=$1
+  if ![[ -e $filename ]]; then
+    continue  # File doesn't exist! But will proceed with shifting rest up.
+  fi
+  new_filename=$(shiftup $filename)
+
+  if [[ -e $new_filename ]]; then
+    print "Unexpected file found: $new_filename" >&2
+    print "Can't re-index: $filename" >&2
+    return 1
+  fi
+  # Move file
+  echo "Reindexing: $filename->$new_filename"
+
+}
+
 
 while [ $1 ]; do
 case "$1" in
@@ -58,25 +77,21 @@ if [[ ! -d $dir ]]; then
   exit 1
 fi
 
-get_last_index $start_index
-last_index=$?
+last_index=$(get_last_index $start_index)
+if [[ -z $last_index ]]; then
+  echo "Error: No index found"
+  exit 1
+fi
 echo "Last index: $last_index"
 
 # From last index to start index we increase the filename index.
-for (index=$last_index; index>=$start_index; --index)
+for ((index=$last_index; index>=$start_index; --index))
 {
-  filename=$(getfile_at $index)
-  if ![[ -e $filename ]]; then;
-    # missing file? Or just a gap?
-    continue  # File doesn't exist!
+  filenames=$(files_at $index)
+  if (( ${#filenames[*]} == 0 )); then
+    continue  # No files with that index
   fi
-  new_filename=$(shiftup $filename)
-
-  if [[ -e $new_filename ]]; then;
-    print "Unexpected file found: $new_filename" >&2
-    print "Can't re-index: $filename" >&2
-    return 1
-  fi
-  # Move file
-  echo "$filename->$new_filename"
+  for file in "$filename[@]"; then
+    move_up $file
+  done
 }
