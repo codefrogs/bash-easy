@@ -65,3 +65,19 @@ if [ -s ${script_name} ]; then
 else
   echo "X: This script is empty or does not exist!!"
 fi
+
+# Test if this script is not empty & exists.
+EMPTY="data/empty-file.txt"
+if [ -s ${EMPTY} ]; then
+  echo "X: This file (${EMPTY}) exists and is not empty."
+else
+  echo "7: This file (${EMPTY}) is empty or does not exist!!"
+fi
+
+# Test if this script is not empty & exists.
+NOWHERE="nowhere"
+if [ -s $NOWHERE ]; then
+  echo "X: This file ($NOWHERE) exists and is not empty."
+else
+  echo "8: The file ($NOWHERE) is empty or does not exist!!"
+fi
