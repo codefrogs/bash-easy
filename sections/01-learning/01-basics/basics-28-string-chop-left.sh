@@ -33,7 +33,7 @@ echo "1 using #/  : $result"
 
 # Remove first forward-slash
 # In this case * can match zero characters.
-# For this reason this line, line 2 is the same as line 1.
+# For this reason this line, line 2, is the same as line 1.
 result="${val#*/}"
 echo "2 using #*/ : $result"
 
