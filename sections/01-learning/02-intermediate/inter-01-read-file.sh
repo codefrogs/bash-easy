@@ -6,7 +6,7 @@
 echo "Bash-easy by Codefrogs"
 echo
 
-# Reading a file line by newline
+# Reading a file line by line
 echo "1: Reading line by line"
 echo "-----------------------"
 while read line; do
@@ -34,7 +34,7 @@ echo
 # Reading in a CSV file
 echo "4: Reading a CSV file: Using IFS"
 echo "--------------------------------"
-OLDIFS="$IFS"  # The seperator
+OLDIFS="$IFS"  # Save the old separator
 IFS=","
 while read first surname location tel; do
    echo "User: $surname, $first"
@@ -42,7 +42,7 @@ while read first surname location tel; do
    echo "Tel: $tel"
 done < data/phonebook.csv
 echo
-IFS="$OLDIFS"
+IFS="$OLDIFS"  # Restore the old separator
 
 # Using 'cat' to read lines of text, with '\n' as a seperator.
 echo "5: Reading lines: Using IFS"
