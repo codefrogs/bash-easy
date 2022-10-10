@@ -15,23 +15,34 @@ echo
 # Using '##'
 # This means remove from the left the most that matches.
 #
-# A way to remember which operator is which, is to think of
-# the '#' as being a railroad track, with a train running left to right eating
-# characters as it goes.
-# The head of the train has two eyes of course; the '%' operator!
-# ################% choo-choo! --->
-# The hungry character eating train!
+# A short story to help you remember which operator is which.
+# Imagine you are waiting for your train. It's late, so you decide to jump
+# onto the railway track to look for the train.
+# The railway track is made out of lots of hash symbols '#'.
+#
+# As you walk to the RIGHT (in search of the train)
+# you pick up any symbols (/modern day trash!).
+#
+# In the distance, on the horizon, you see a fast moving train with two big eyes.
+# The two eyes look like this: %
+#
+# The super fast train is hurtling towards you going LEFT,
+# heading straight for you, eating the symbols (/trash) as it goes!
+#
+# ################% choo-choo-<-<-<-<---
+#
+# The hungry character / trash eating train!
 
 # A path to a document.
 val="//home/robert/Documents/thesis.doc"
 echo "0 path  is  : $val"
 
-# Remove first forward-slash
+# Remove first forward-slash '/'
 # Here we use '#'.
 result="${val#/}"
 echo "1 using #/  : $result"
 
-# Remove first forward-slash
+# Remove first forward-slash '/'
 # In this case * can match zero characters.
 # For this reason this line, line 2, is the same as line 1.
 result="${val#*/}"
