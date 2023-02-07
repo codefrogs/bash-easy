@@ -16,6 +16,7 @@ echo "Item[6]: ${items[6]}"
 echo
 echo "----Array Length----"
 echo "Length: ${#items[*]}"
+echo
 echo "----Array item length----"
 echo "Length of ${items[1]}=${#items[1]}"
 echo
@@ -60,3 +61,17 @@ echo
 echo "----Show indexes----"
 echo "Atomic numbers: ${!atomic_num[@]}"
 echo
+
+function display()
+{
+   i=1
+   echo "Items:  $@"
+   for item in $@; do
+     echo "$i: $item"
+     ((i+=1))
+   done 
+}
+
+echo "----Pass to function---"
+echo 'display "${items[@]}"'
+display "${items[@]}"
