@@ -11,6 +11,6 @@
 
 i=0
 for arg in "$@"; do
-   echo "Item $i: $arg"
+   echo "Arg $i: $arg"
    (( i++ ))
 done
