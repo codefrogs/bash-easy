@@ -15,7 +15,7 @@ result=$?
 
 # Display the result (0->SUCCESS, otherwise failure)
 if (( result!=0 )); then
-  echo "Error: $result"
+  echo "Error: $result"  # As the script returns some non-zero number.
 else
   echo "X: OK!"
 fi
