@@ -75,3 +75,9 @@ function display()
 echo "----Pass to function---"
 echo 'display "${items[@]}"'
 display "${items[@]}"
+
+# Listing items in an array
+planets=( Mercury Venus Earth Mars Jupiter Saturn Uranus Neptune )
+for planet in ${planets[@]}; do
+	echo "Planet: $planet"
+done
