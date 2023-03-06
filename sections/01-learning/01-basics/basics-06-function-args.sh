@@ -44,6 +44,12 @@ function get_status ()
 {
   return 86
 }
+
+# Another string
+function get_return_string()
+{
+  echo "My-Data-String"
+}
 #
 # Using the defined functions
 # ---------------------------
@@ -57,7 +63,7 @@ printf "3: "
 display_this "Look no hands!"
 
 # set -u # Would fail with this: does not allow undefined variables.
-echo "4: Using display_this() without an argument!"
+# Using display_this() without an argument.
 printf "4: "
 display_this
 
@@ -74,3 +80,7 @@ echo "6: Prime - get_prime(): $p"
 get_status
 state=$?
 echo "7: Get an exit code: $state"
+
+# Same as in step 5, just getting a string return value.
+string_val=$( get_return_string )
+echo "8: Return a string: $string_val"
