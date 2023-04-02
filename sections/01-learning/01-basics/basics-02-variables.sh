@@ -34,6 +34,10 @@ readonly dob="17/05/1988"
 # We can't do this with readonly variables.
 # gravity=1.0
 
+# You can clear a variable like this:
+unset myvar  # No longer defined.
+echo "1: myvar: $myvar (EMPTY!)"
+
 # Uncomment to see what effect 'declare' has.
 # echo "dist (before)= $dist"
 # dist='a'
