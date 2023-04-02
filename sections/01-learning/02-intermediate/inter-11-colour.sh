@@ -27,7 +27,9 @@ BG_CYAN="\033[46m"
 BG_GREY="\033[47m"
 BG_CSTD="\033[49m" # default background
 
-CEND="\033[0m"  # No colour
+BOLD="\033[1m" # Bold format
+ITALIC="\033[3m" # Italic format
+CEND="\033[0m" # No colour, no formatting
 
 echo -e "Test A: ${GREEN}PASSED${CEND}"
 echo -e "Test B: ${RED}FAILED${CEND}"
@@ -44,7 +46,6 @@ echo -e "Magenta: ${MAGENTA}magenta${CEND}"
 echo -e "Cyan:    ${CYAN}cyan${CEND}"
 echo -e "Grey:    ${GREY}grey${CEND}"
 echo    "Normal:  normal"
-
 echo
 echo "Colours (Background)"
 echo "-------"
@@ -57,6 +58,11 @@ echo -e "Magenta: ${BG_MAGENTA}magenta${CEND}"
 echo -e "Cyan:    ${BG_CYAN}cyan${CEND}"
 echo -e "Grey:    ${BG_GREY}grey${CEND}"
 echo    "Normal:  normal"
-
+echo
+echo "Formatting"
+echo "----------"
+echo -e "Bold:    ${BOLD}bold${CEND}"
+echo -e "Bold Red:${BOLD}${RED}bold-red${CEND}"
+echo -e "Italic: ${ITALIC}italic${CEND}"
 echo
 echo "You can even use these colours in your prompt string PS1."
