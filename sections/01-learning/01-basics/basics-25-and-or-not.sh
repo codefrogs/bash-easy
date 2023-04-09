@@ -56,8 +56,15 @@ type="terrace"
 location="Hull"
 newhome="true"
 
+# We use the test '-n' == 'string length !=0'
+# See 'test-with-test' if you need a reminder of the different tests.
+# Alternatively type in 'man test'
+if [[ -n $type && -n $location && -n $newhome ]]; then
+  echo "6: House: Parameters defined"
+fi
+
 if [[ $type == "terrace" && $location == "Hull" && $newhome == "true" ]]; then
-  echo "6: House: Match found"
+  echo "7: House: Match found"
 fi
 
 if [[ $type == "flat" && $location == "Hull" && $newhome == "true" ]]; then
@@ -65,9 +72,10 @@ if [[ $type == "flat" && $location == "Hull" && $newhome == "true" ]]; then
 fi
 
 if [[ $type == "terrace" || $location == "York" || $newhome == "true" ]]; then
-  echo "7: House: Partial Match found"
+  echo "8: House: Partial Match found"
 fi
 
 if [[ $type == "detaced" || $location == "Glasgow" || $newhome == "false" ]]; then
   echo "X: Home: Found a partial match!!!"
 fi
+
